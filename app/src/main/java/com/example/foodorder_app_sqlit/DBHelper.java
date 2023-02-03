@@ -106,7 +106,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean updateOrder(String name, String phone, int price, int image, String desc, CharSequence text, String foodname, int quantity, int id) {
+    public boolean updateOrder(String name, String phone, int price, int image, String desc, String foodname, int quantity, int id) {
         SQLiteDatabase database = getReadableDatabase();
         ContentValues values = new ContentValues();
         values.put("name", name);
@@ -134,4 +134,5 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    }
+
+}

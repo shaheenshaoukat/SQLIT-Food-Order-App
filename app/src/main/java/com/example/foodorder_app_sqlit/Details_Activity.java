@@ -112,31 +112,34 @@ public class Details_Activity extends AppCompatActivity {
 
 
 
-            binding.btnOrderNow.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            binding.btnOrderNow.setOnClickListener(v -> {
+                boolean isUpdated= helper.updateOrder
+                        (binding.etName.getText().toString()
+                                ,binding.etPhone.getText().toString(),
+                                Integer.parseInt(binding.tvorderPrices.getText().toString()),
+                                image,
+                                binding.namebox.getText().toString(),
 
-                boolean isUpdated=    helper.updateOrder(
-                            binding.etName.getText().toString(),
-                            binding.etPhone.getText().toString(),
-                            Integer.parseInt(binding.tvorderPrices.getText().toString()),
-                            image,
-                            binding.DetailDescription.getText().toString(),
-                            binding.namebox.getText(), toString(),
-                            1,
-                            id
+                                binding.DetailDescription.getText().toString(),
+                                Integer.parseInt(binding.quntity.getText().toString()),
+                                id) ;
 
 
-                    );
                 if (isUpdated){
-                    Toast.makeText(Details_Activity.this, "Updates", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(Details_Activity.this, "Failed ", Toast.LENGTH_SHORT).show();
-                }
-                }
-            });
+                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
 
+                }
+
+
+
+
+
+
+
+            });
 
         }
 
